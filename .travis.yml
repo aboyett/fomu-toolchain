@@ -24,7 +24,3 @@ deploy:
     repo: im-tomu/fomu-toolchain
     all_branches: true
     tags: true
-branches:
-  only:
-    # Release tags
-    - /^v\d+\.\d+/
