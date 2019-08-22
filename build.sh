@@ -31,6 +31,7 @@ mkdir -p $output/bin
 echo "${TRAVIS_TAG}" > $output/VERSION
 
 checksum_output() {
+    set +x
     hashes="sha1 sha256 sha512"
     local outfile hashfile
     outfile=$output$1
@@ -40,6 +41,7 @@ checksum_output() {
         ${hash}sum $outfile > $hashfile
 	echo -n "$hash: " ; cat $hashfile
     done
+    set -x
 }
 
 case "${ARCH}" in
